@@ -1,17 +1,17 @@
 *Warning! Writing via a translator*
 
-# How to compile?
+## How to compile?
 Use g++ -> `g++ musikGENERATOR.cpp -o name`
 
-# OS and distributions:
+## OS and distributions:
 I wrote this project on Ubuntu, and honestly, I DO NOT KNOW how to make it for Windows, but you can create a Windows version (MIT license).
 
 Does not work on Windows.
 
-# About me:
+## About me:
 I am a 13-year-old teenager, I have been learning C++ for 4 months and I like it. There might be errors or workarounds in the code.
 
-# Artificial intelligence
+## Artificial intelligence
 I used AI, but only partially:
 1. Searching for how to play sounds
 2. How a 2D matrix works
