@@ -1,4 +1,4 @@
-*Warning! Writing via a translator*
+*Warning! Writing via a translator, My English is not very good*
 
 ## How to compile?
 Use g++ -> `g++ musikGENERATOR.cpp -o name`
