@@ -20,3 +20,5 @@ I used AI, but only partially:
 5. AI wrote Undertale Music, but I wrote the `beep()` and `wait()` functions myself.
 
 At the same time, **I wrote** most of the project **myself**.
+
+# **You can use this project however you like**
