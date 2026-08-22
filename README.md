@@ -21,4 +21,4 @@ I used AI, but only partially:
 
 At the same time, **I wrote** most of the project **myself**.
 
-# **You can use this project however you like**
+# **You are free to use, modify, and distribute this project**
