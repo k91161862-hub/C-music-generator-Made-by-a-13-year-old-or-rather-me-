@@ -1,4 +1,5 @@
-#include <iostream>
+#pragma once
+#include <iostream> 
 #include <thread>
 #include <chrono>
 #include <cstdlib>
@@ -8,6 +9,7 @@
 // MEMO:
 // speaker-test -t sine -f hz -l loops > dev/null 2>&1 &
 // killall speaker-test > dev/null 2>&1
+// play -n synth 0.3 square 440
 
 std::random_device rd;
 std::mt19937 R4(rd());
@@ -45,17 +47,18 @@ void learn(T& ... ar) {
 
 
 
-void beep(const int hz, const int milliseconds) { // Manual sound creation
-    std::string command = "speaker-test -t sine -f " + std::to_string(hz) + " > /dev/null 2>&1 &";
+void beep(const int hz, const int milliseconds) {
+    std::string command = "play -q -n synth " + std::to_string(milliseconds / 1000.0) + " square " + std::to_string(hz) + " > /dev/null 2>&1 &";
     std::system(command.c_str());
-    std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
-    std::system("killall speaker-test > /dev/null 2>&1");
+    wait(milliseconds);
+    std::system("killall play > /dev/null 2>&1");
 }
 
 int random_time() {
-    return (RRANDOM == 1) ? 260 : 500;
+    return (RRANDOM == 1) ? 150 : 300;
 }
 
+#define CLEAR_CONSOLE std::system("clear") 
 
 /* Index memo
 Do1  = 523;  0 
@@ -67,6 +70,7 @@ La1  = 880;  5
 Si1  = 988;  6
 Do2  = 1046; 7
 */
+
 
 
 void autobeep(const int times) {
@@ -81,18 +85,25 @@ void autobeep(const int times) {
         {4, 2}  
     };
 
-    int real_step = RRANDOM_NOTE; 
+    int real_step = RRANDOM_NOTE; // от 0 до 7
     std::string command;
-
+    int stats_step;
+    int stats_HZ;
+    int time;
     for (int i = 0; i < times; ++i) {
-        command = "speaker-test -t sine -f " + std::to_string(notes[real_step]) + " > /dev/null 2>&1 &";
+        time = random_time();
+        command = "play -n synth " + std::to_string(time / 1000.0) + " square " + std::to_string(notes[real_step]) + " > /dev/null 2>&1 &";
         std::system(command.c_str());
-        wait(random_time());
-        std::system("killall speaker-test > /dev/null 2>&1");
+
+        stats_step = i + 1;
+        stats_HZ = notes[real_step];
+        std::cout << "HZ: " << stats_HZ << " | step: " << stats_step << '\n';
+
+        wait(time);
+        std::system("killall play > /dev/null 2>&1");
         
         int random_column = RRANDOM - 1; 
         real_step = next_notes[real_step][random_column];
     }
 }
 
-#define CLEAR_CONSOLE std::system("clear")
