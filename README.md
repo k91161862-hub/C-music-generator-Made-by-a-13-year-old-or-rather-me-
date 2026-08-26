@@ -12,5 +12,3 @@ Does not work on Windows.
 I am a 13-year-old teenager, I have been learning C++ for 4 months and I like it. There might be errors or workarounds in the code.
 
 # **You are free to use, modify, and distribute this project**
-
-## SQR / sqr = square wawe
