@@ -1,6 +1,6 @@
 *Warning! Writing via a translator, My English is not very good*
 
-##*!Don't forget to turn down the volume. It's too loud!*
+#*!Don't forget to turn down the volume. It's too loud!*
 
 ## How to compile?
 Use g++ -> `g++ musikGENERATOR.cpp -o name`
