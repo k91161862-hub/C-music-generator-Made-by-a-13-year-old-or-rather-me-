@@ -1,4 +1,5 @@
 *Warning! Writing via a translator, My English is not very good*
+*!Don't forget to turn down the volumeю It's too loud!*
 
 ## How to compile?
 Use g++ -> `g++ musikGENERATOR.cpp -o name`
